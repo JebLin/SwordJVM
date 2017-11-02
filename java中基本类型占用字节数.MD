@@ -29,4 +29,3 @@ boolean 1字节 1*8 false、true
 补充：Java有一个能够表示任意精度的算书包，通常称为“大数值”(big number)。虽然被称为大数值，但它并不是一种Java类型，而是一个Java对象。
 如果基本的整数和浮点数精度不能够满足需求，那么可以使用java.math包中的两个很有用的类：BigIntegerBigDecimal(Android SDK中也包含了java.math包以及这两个类)这两个类可以处理包含任意长度数字序列的数值。BigInteger类实现了任意精度的整数运算，BigDecimal实现了任意精度的浮点数运算。具体的用法可以参见Java API。
 
-来源： http://blog.csdn.net/witsmakemen/article/details/8974200
