@@ -1,7 +1,7 @@
 # JAVA为什么要配置环境变量，怎样配置
 <hr />
 
-####安装JDK后要配置环境变量，主要有三个：
+#### 安装JDK后要配置环境变量，主要有三个：
 
  - 1 JAVA_HOME ->为JDK的安装目录，如：F:\JAVA\jdk1.6.0_04
  - 2 CLASSPATH ->到哪里找需要执行的.class文件，如: .;%JAVA_HOME%\lib;
