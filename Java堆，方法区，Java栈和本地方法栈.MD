@@ -14,7 +14,7 @@
 最近在看《深入理解Java虚拟机》，书中给了几个例子，比较好的说明了几种OOM（OutOfMemory）产生的过程，大部分的程序员在写程序时不会太关注Java运行时数据区域的结构：
 
 感觉有必要通过几个实在的例子来加深对这几个区域的了解
-1）Java堆
+### 1）Java堆
 所有对象的实例分配都在Java堆上分配内存，堆大小由-Xmx和-Xms来调节，sample如下所示：
 ```
 public class HeapOOM {  
@@ -37,7 +37,7 @@ public class HeapOOM {
 加上JVM参数-verbose:gc -Xms10M -Xmx10M -XX:+PrintGCDetails -XX:SurvivorRatio=8 -XX:+HeapDumpOnOutOfMemoryError，就能很快报出OOM：
 Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 并且能自动生成Dump。
-2）方法区
+### 2）方法区
 方法区是存放虚拟机加载类的相关信息，如类的结构、静态变量和常量，大小由-XX:PermSize和-XX:MaxPermSize来调节，类太多有可能撑爆永久带：
 ```
 public class MethodAreaOOM {  
@@ -94,7 +94,7 @@ public class ConstantOOM {
 
 同样加上JVM参数：-XX:PermSize=10M -XX:MaxPermSize=10M，运行后报如下异常：
 Exception in thread "main" java.lang.OutOfMemoryError: PermGen space
-3）Java栈和本地方法栈
+### 3）Java栈和本地方法栈
 栈是存放线程调用方法时存储局部变量表，操作，方法出口等与方法执行相关的信息，栈大小由Xss来调节，方法调用层次太多会撑爆这个区域，samples如下所示：
 ```
 package com.cutesource;  
